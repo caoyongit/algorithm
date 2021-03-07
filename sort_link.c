@@ -59,14 +59,64 @@ table addTable(table t, int elem, int add) {
 	return t;
 }
 
+table delTable(table t, int add) {
+	if (add > t.length + 1 || add < 1)
+	{
+		printf("插入的位置有问题\n");
+		return t;
+	}
+	for (int i = add; i < t.length; i++)
+	{
+		t.head[i - 1] = t.head[i];
+	}
+	t.length--;
+	return t;
+}
+
+int selectTable(table t, int elem) {
+	for (int i = 0; i < t.length; i++)
+	{
+		if (t.head[i] == elem)
+		{
+			return i + 1;
+		}
+	}
+	return -1;//查找失败，返回-1
+}
+
+//更改元素，elem为要更改的元素，newElem为新的数据元素
+table amendTable(table t, int elem, int newElem) {
+	int add = selectTable(t, elem);
+	t.head[add - 1] = newElem;//返回的是元素在顺序表中的位置，所以-1就是该元素在数组中的下标
+	return t;
+}
+
+/*
 int main() {
 	table t = initTable();
 	for (int i = 1; i <= Size; i++) {
 		t.head[i - 1] = i;
 		t.length++;
 	}
-	printf("顺序表中存储的元素分别是\n");
+	printf("原顺序表\n");
 	displayTalbe(t);
+
+	printf("删除元素1：\n");
+	t = delTable(t, 1);
+	displayTalbe(t);
+
+	printf("在第2的位置插入元素5：\n");
+	t = addTable(t, 5, 2);
+	displayTalbe(t);
+
+	printf("查找元素3的位置：\n");
+	int add = selectTable(t, 3);
+	printf("%d\n", add);
+
+	printf("将元素3改为6:\n");
+	t = amendTable(t, 3, 6);
+	displayTalbe(t);
+
 	return 0;
-}
+}*/
 
