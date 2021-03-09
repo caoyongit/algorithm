@@ -127,6 +127,81 @@ link *amendElem(link *p, int add, int newElem) {
 	return p;
 }
 
+//迭代反转法，head 为无头节点链表的头指针
+link * iteration_reverse(link* head) {
+	if (head == NULL || head->next == NULL) 
+	{
+		return head;
+	}
+	else 
+	{
+		link *beg = NULL;
+		link *mid = head;
+		link *end = head->next;
+		while (1)
+		{
+			//修改 mid 所指节点的指向
+			mid->next = beg;
+			//此时判断 end 是否为 NULL，如果成立则退出循环
+			if (end == NULL)
+			{
+				break;
+			}
+			//整体向后移动 3 个指针
+			beg = mid;
+			mid = end;
+			end = end->next;
+		}
+		//最后修改 head 头指针的指向
+		head = mid;
+		return head;
+	}
+}
+
+//递归反转法
+link* recursive_reverse(link* head) 
+{
+	//递归的出口
+	if (head == NULL && head->next == NULL) { // 空链或只有一个结点，直接返回头指针
+		
+		return head;
+	}
+	else
+	{
+		//一直递归，找到链表中最后一个节点
+		link *new_head = recursive_reverse(head->next);
+		//当逐层退出时，new_head 的指向都不变，一直指向原链表中最后一个节点；
+
+		//递归每退出一层，函数中 head 指针的指向都会发生改变，都指向上一个节点。
+		//每退出一层，都需要改变 head->next 节点指针域的指向，同时令 head 所指节点的指针域为 NULL。
+		head->next->next = head;
+		head->next = NULL;
+		//每一层递归结束，都要将新的头指针返回给上一层。由此，即可保证整个递归过程中，能够一直找得到新链表的表头。
+		return new_head;
+	}
+}
+
+//头插法实现链表反转
+link *head_reverse(link *head)
+{
+	link *new_head = NULL;
+	link * temp = NULL;
+	if (head == NULL || head->next == NULL) {
+		return head;
+	}
+	while (head != null)
+	{
+		temp = head;
+		//将 temp 从 head 中摘除
+		head = head->next;
+
+		//将 temp 插入到 new_head 的头部
+		temp->next = new_head;
+		new_head = temp;
+	}
+	return new_head;
+}
+
 int main() {
 	//初始化链表（1，2，3，4）
 	printf("初始化链表为：\n");
