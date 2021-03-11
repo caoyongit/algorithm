@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="link.c" />
     <ClCompile Include="sort_link.c" />
+    <ClCompile Include="static_link.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

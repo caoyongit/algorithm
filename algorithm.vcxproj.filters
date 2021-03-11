@@ -21,5 +21,8 @@
     <ClCompile Include="link.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="static_link.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
