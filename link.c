@@ -1,4 +1,4 @@
-#include <stdlib.h>
+/*#include <stdlib.h>
 #include <stdio.h>
 #define Size 5
 
@@ -7,7 +7,7 @@ typedef struct Link {
 	struct Link *next;//代表指针域，指向直接后继元素
 }link;//link为节点名，每个节点都是一个link结构体
 
-/*
+
 link * initLink() {
 	link *p = NULL;//创建头指针
 	link *temp = (link*)malloc(sizeof(link));//创建首元节点
@@ -38,7 +38,7 @@ void display(link *p) {
 	}
 	printf("\n");
 }
-*/
+
 
 link * initLink() {
 	link *p = (link*)malloc(sizeof(link));//创建一个头结点
@@ -285,7 +285,7 @@ bool LinkIntersect3(link * L1, link * L2) {
 		pshort = pshort->next;
 	}
 	return False;
-}
+}*/
 
 /*
 int main() {
