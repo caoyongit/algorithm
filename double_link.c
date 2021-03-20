@@ -118,15 +118,16 @@ line *amendElemLine(line * p, int add, int newElem) {
 	return p;
 }
 
+/*
 int main() {
-	/*//创建一个头指针
-	line * head = NULL;
+	//创建一个头指针
+	//line * head = NULL;
 	//调用链表创建函数
-	head = initLine(head);
+	//head = initLine(head);
 	//输出创建好的链表
-	displayLine(head);
+	//displayLine(head);
 	//显示双链表的优点
-	printf("链表中第 4 个节点的直接前驱是：%d\n", head->next->next->next->prior->data);*/
+	//printf("链表中第 4 个节点的直接前驱是：%d\n", head->next->next->next->prior->data);
 
 	line * head = NULL;
 	//创建双链表
@@ -145,4 +146,4 @@ int main() {
 	return 0;
 
 	return 0;
-}
+}*/

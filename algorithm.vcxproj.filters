@@ -27,5 +27,8 @@
     <ClCompile Include="double_link.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="JosephRing.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
